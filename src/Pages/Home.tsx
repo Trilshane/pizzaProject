@@ -37,9 +37,9 @@ const Home: FC = () => {
     getPizzas();
   }, [filterIndex, sortObj]);
 
-  const filteredPizzas = pizzas.map((pizza) => (
-    <PizzaBlock {...pizza} key={pizza.id} />
-  ));
+  const filteredPizzas = pizzas
+    .filter((pizza) => pizza.title.includes(searchValue))
+    .map((pizza) => <PizzaBlock {...pizza} key={pizza.id} />);
   const skeletons = [...new Array(8)].map((_, i) => <PizzaSkeleton key={i} />);
 
   return (

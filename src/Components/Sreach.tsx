@@ -23,7 +23,7 @@ const Search = () => {
 
   return (
     <>
-      {location.pathname === "/" && (
+      {location.pathname === "/pizzaProject" && (
         <div className={styles.root}>
           <svg
             className={styles.icon}
